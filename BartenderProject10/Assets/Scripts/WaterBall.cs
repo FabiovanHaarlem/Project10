@@ -3,6 +3,7 @@
 public class WaterBall : MonoBehaviour
 {
     public Beverages m_Beverage;
+    public Extras m_AddOns;
     private Renderer m_Renderer;
     private Rigidbody m_Rigidbody;
 
@@ -19,6 +20,17 @@ public class WaterBall : MonoBehaviour
     {
         transform.position = pos;
         m_Beverage = beverage;
+        gameObject.SetActive(true);
+        Vector3 dir = (target - transform.position).normalized;
+        m_Rigidbody.AddForce(dir * 1.2f, ForceMode.Impulse);
+        m_DisableTimer = 0.5f;
+        m_Disable = false;
+    }
+
+    public void Activate(Vector3 pos, Vector3 target, Extras addOn)
+    {
+        transform.position = pos;
+        m_AddOns = addOn;
         gameObject.SetActive(true);
         Vector3 dir = (target - transform.position).normalized;
         m_Rigidbody.AddForce(dir * 1.2f, ForceMode.Impulse);
@@ -51,7 +63,7 @@ public class WaterBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("DisableCollider"))
+        if (other.CompareTag("Glas"))
         {
             m_Disable = true;
         }

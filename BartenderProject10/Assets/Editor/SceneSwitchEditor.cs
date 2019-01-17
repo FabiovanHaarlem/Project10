@@ -4,8 +4,8 @@ using UnityEditor.SceneManagement;
 
 public class SceneSwitchEditor
 {
-    [MenuItem("Scenes/NormaleMode")]
-    public static void LoadNormaleMode()
+    [MenuItem("Scenes/Game")]
+    public static void LoadGame()
     {
         EditorSceneManager.OpenScene("Assets/Scenes/Game.unity");
         EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
@@ -15,6 +15,20 @@ public class SceneSwitchEditor
     public static void LoadNormaleModeTEST()
     {
         EditorSceneManager.OpenScene("Assets/Scenes/Development/DevelopmentTEST.unity");
+        EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+    }
+
+    [MenuItem("Scenes/LevelBuilding")]
+    public static void LoadLevelBuilding()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/LevelBuilding.unity");
+        EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+    }
+
+    [MenuItem("Scenes/MainArtDropScene")]
+    public static void MainArtDropScene()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/Artists/MainArtDropScene.unity");
         EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
     }
 }

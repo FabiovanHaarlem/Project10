@@ -4,16 +4,25 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     private List<WaterBall> m_WaterBalls;
+    private List<GlasFeedback> m_GlasFeedbacks;
 
     private void Awake()
     {
         m_WaterBalls = new List<WaterBall>();
+        m_GlasFeedbacks = new List<GlasFeedback>();
 
         for (int i = 0; i < 400; i++)
         {
-            GameObject waterball = Instantiate(Resources.Load("Prefabs/Waterball")) as GameObject;
+            GameObject waterball = Instantiate(Resources.Load("Prefabs/Dev/Waterball")) as GameObject;
             m_WaterBalls.Add(waterball.GetComponent<WaterBall>());
             waterball.SetActive(false);
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            GameObject glasFeedback = Instantiate(Resources.Load("Prefabs/Dev/GlasFeedback")) as GameObject;
+            m_GlasFeedbacks.Add(glasFeedback.GetComponent<GlasFeedback>());
+            glasFeedback.SetActive(false);
         }
     }
 
@@ -45,5 +54,20 @@ public class ObjectPool : MonoBehaviour
         }
 
         return waterball;
+    }
+
+    public GlasFeedback GetGlasFeedback()
+    {
+        GlasFeedback glasFeedback = m_GlasFeedbacks[0];
+        for (int i = 0; i < m_GlasFeedbacks.Count; i++)
+        {
+            if (!m_GlasFeedbacks[i].gameObject.activeInHierarchy)
+            {
+                glasFeedback = m_GlasFeedbacks[i];
+                break;
+            }
+        }
+
+        return glasFeedback;
     }
 }
