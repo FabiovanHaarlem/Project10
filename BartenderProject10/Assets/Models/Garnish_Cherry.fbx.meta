@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 400537577ab5f9741baf65fe10b3b4c7
+guid: 7298e7b7ee3ddc84a823e78ab0c080f7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: Texture
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCylinder13
+    4300000: pSphere3
   externalObjects: {}
   materials:
     importMaterials: 1
