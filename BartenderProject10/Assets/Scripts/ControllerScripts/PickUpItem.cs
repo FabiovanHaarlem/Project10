@@ -33,4 +33,10 @@ public class PickUpItem : MonoBehaviour
         if (m_Item == null)
         m_Item = other.gameObject;
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (m_Item != null)
+            m_Item = null;
+    }
 }
