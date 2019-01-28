@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Name: LynchLemonade
   m_EditorClassIdentifier: 
   m_BeverageName: Lynch Lemonade
-  m_BeverageIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_BeverageColor: {fileID: 2100000, guid: ebb93765c6e55fc4e8d58e76407bad08, type: 2}
+  m_BeverageIcon: {fileID: 21300000, guid: dffbb063ea82b7e4597e63cdd9744b0c, type: 3}
   m_Beverages:
   - m_Beverage: 0
     m_AmountInShots: 2
