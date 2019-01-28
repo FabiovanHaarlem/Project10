@@ -60,10 +60,12 @@ public class Person : MonoBehaviour
         if (playerRating == m_BeverageRating || playerRating == m_BeverageRating - 1 || playerRating == m_BeverageRating + 1)
         {
             BeverageIsRight();
+            glas.ResetGlas();
         }
         else
         {
             BeverageIsWrong();
+            glas.ResetGlas();
         }
 
         m_NewBeverage = true;
@@ -86,11 +88,13 @@ public class Person : MonoBehaviour
     private void BeverageIsRight()
     {
         m_FeedbackCloud.RightDrink();
+        Debug.Log("Right Drink");
     }
 
     private void BeverageIsWrong()
     {
         m_FeedbackCloud.WrongDrink();
+        Debug.Log("Wrong Drink");
     }
 
     private void OnTriggerEnter(Collider other)

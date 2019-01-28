@@ -12,6 +12,18 @@ public class PickUpItem : MonoBehaviour
         m_ControllerInput.E_OnTriggerUpEvent += ReleaseItem;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            GrabItem();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ReleaseItem();
+        }
+    }
+
     private void GrabItem()
     {
         m_Item.transform.parent = transform;
@@ -22,9 +34,9 @@ public class PickUpItem : MonoBehaviour
     {
         if (m_Item != null)
         {
+            m_Item.GetComponent<Rigidbody>().useGravity = true;
             m_Item.transform.parent = null;
             m_Item = null;
-            m_Item.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 
