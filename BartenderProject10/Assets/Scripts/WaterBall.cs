@@ -41,7 +41,7 @@ public class WaterBall : MonoBehaviour
 
     public void Deactivate()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         m_Rigidbody.velocity = new Vector3(0f, 0f, 0f);
     }
 
@@ -67,6 +67,11 @@ public class WaterBall : MonoBehaviour
         if (other.CompareTag("Glas"))
         {
             m_Disable = true;
+        }
+
+        if (other.CompareTag("DisableCollider"))
+        {
+            Deactivate();
         }
     }
 }

@@ -4,7 +4,6 @@ public class Bottle : MonoBehaviour
 {
     [SerializeField]
     private Beverages m_Beverage;
-    [SerializeField]
     private ObjectPool m_ObjectPool;
     [SerializeField]
     private Material m_WaterColor;
@@ -29,6 +28,11 @@ public class Bottle : MonoBehaviour
         m_WaterBallTarget.transform.position = new Vector3(m_BottleOpening.position.x, m_BottleOpening.position.y + 0.3f, m_BottleOpening.position.z);
         m_DefaultPosition = transform.position;
         m_DefaultRotation = transform.rotation;
+    }
+
+    private void Start()
+    {
+        m_ObjectPool = GameObject.Find("_System").GetComponent<ObjectPool>();
     }
 
     private void Update()
