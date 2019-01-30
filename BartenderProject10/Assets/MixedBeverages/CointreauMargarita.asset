@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9508aa2a46ea2114fa654543d1a18e18, type: 3}
   m_Name: CointreauMargarita
   m_EditorClassIdentifier: 
-  m_BeverageName: CointreauMargarita
+  m_BeverageName: Cointreau Margarita
   m_BeverageIcon: {fileID: 21300000, guid: c0a098a777f73e14693998d57a463070, type: 3}
   m_Beverages:
   - m_Beverage: 2

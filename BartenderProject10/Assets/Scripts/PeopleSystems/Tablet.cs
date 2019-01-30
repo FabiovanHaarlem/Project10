@@ -31,6 +31,8 @@ public class Tablet : MonoBehaviour
             m_Index = 0;
 
         m_Screen.sprite = m_MixCards[m_Index].m_BeverageIcon;
+        m_BeverageName.text = m_MixCards[m_Index].name;
+        m_Information.text = m_MixCards[m_Index].m_Information;
     }
 
     private void OnTriggerEnter(Collider other)
