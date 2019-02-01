@@ -21,14 +21,17 @@ public class Glas : MonoBehaviour
 
     private Vector3 m_DefaultPosition;
     private Quaternion m_DefaultRotation;
+    private GameObject m_Parent;
 
     private void Awake()
     {
         //m_GlasContents = new List<GlasBeveragePiece>();
         m_GlasContents = new Dictionary<Beverages, int>();
         m_GlasFeedback = new List<GlasFeedback>();
-        m_DefaultPosition = transform.position;
-        m_DefaultRotation = transform.rotation;
+
+        m_Parent = transform.parent.gameObject;
+        m_DefaultPosition = m_Parent.transform.position;
+        m_DefaultRotation = m_Parent.transform.rotation;
     }
 
     private void Start()
@@ -63,8 +66,8 @@ public class Glas : MonoBehaviour
 
         m_GlasContents.Clear();
         m_ShotProgress = 0.0f;
-        transform.position = m_DefaultPosition;
-        transform.rotation = m_DefaultRotation;
+        m_Parent.transform.position = m_DefaultPosition;
+        m_Parent.transform.rotation = m_DefaultRotation;
     }
 
     private void AddBeverage(Collider other)
@@ -79,7 +82,7 @@ public class Glas : MonoBehaviour
                 m_LastBeverage = waterBall.m_Beverage;
             }
 
-            m_ShotProgress += 0.5f * Time.deltaTime;
+            m_ShotProgress += 1.5f * Time.deltaTime;
             if (m_ShotProgress >= 1f)
             {
                 m_GlasContents[waterBall.m_Beverage]++;
