@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: TheRedZone
   m_EditorClassIdentifier: 
   m_BeverageName: The Red Zone
-  m_BeverageIcon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_BeverageIcon: {fileID: 21300000, guid: abaec86f28c9b6a4388fcd20445db4bf, type: 3}
   m_Beverages:
   - m_Beverage: 10
     m_AmountInShots: 1
