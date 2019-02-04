@@ -7,6 +7,7 @@ TagManager:
   - DisableCollider
   - WaterBall
   - Glas
+  - HandTrigger
   layers:
   - Default
   - TransparentFX
@@ -17,14 +18,14 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Hands
+  - Grabable
+  - Static
+  - DisableCollider
+  - Waterball
+  - Glas
+  - People
+  - Bottle
   - 
   - 
   - 

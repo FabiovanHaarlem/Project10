@@ -16,7 +16,7 @@ public class WaterBall : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Activate(Vector3 pos, Vector3 target, Beverages beverage)
+    public void Activate(Vector3 pos, Vector3 target, Beverages beverage, Material beverageColor)
     {
         transform.position = pos;
         m_Beverage = beverage;
@@ -25,6 +25,7 @@ public class WaterBall : MonoBehaviour
         m_Rigidbody.AddForce(dir * 1.2f, ForceMode.Impulse);
         m_DisableTimer = 0.5f;
         m_Disable = false;
+        ChangeMaterial(beverageColor);
     }
 
     public void Activate(Vector3 pos, Vector3 target, Extras addOn)
@@ -40,7 +41,7 @@ public class WaterBall : MonoBehaviour
 
     public void Deactivate()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         m_Rigidbody.velocity = new Vector3(0f, 0f, 0f);
     }
 
@@ -56,9 +57,9 @@ public class WaterBall : MonoBehaviour
         }
     }
 
-    public void ChangeMaterial()
+    public void ChangeMaterial(Material beverageColor)
     {
-
+        m_Renderer.material = beverageColor;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,6 +67,11 @@ public class WaterBall : MonoBehaviour
         if (other.CompareTag("Glas"))
         {
             m_Disable = true;
+        }
+
+        if (other.CompareTag("DisableCollider"))
+        {
+            Deactivate();
         }
     }
 }

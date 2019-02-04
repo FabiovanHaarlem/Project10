@@ -77,6 +77,7 @@ public class GlasFeedback : MonoBehaviour
 
     public void Deactivate()
     {
+        transform.parent = transform;
         gameObject.SetActive(false);
     }
 
@@ -84,13 +85,13 @@ public class GlasFeedback : MonoBehaviour
     {
         m_BeverageInformation.text = m_BeverageName + Environment.NewLine + Mathf.Round(amount) + "Shots";
         amount = Mathf.Clamp(amount, 0, 10);
-        amount = amount / 100f;
+        amount = amount / 25f;
         m_CurrentTargetPosition = Vector3.MoveTowards(m_MinPoint, m_MaxPoint, amount);
+        transform.position = Vector3.MoveTowards(transform.position, m_CurrentTargetPosition, 1f);
     }
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, m_CurrentTargetPosition, 1f * Time.deltaTime);
         m_RotateParent.transform.LookAt(m_PlayerHead.transform.position);
     }
 

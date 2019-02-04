@@ -19,11 +19,24 @@ public class Glas : MonoBehaviour
     [SerializeField]
     private Transform m_MinPoint;
 
+    private Vector3 m_DefaultPosition;
+    private Quaternion m_DefaultRotation;
+    private GameObject m_Parent;
+
     private void Awake()
     {
         //m_GlasContents = new List<GlasBeveragePiece>();
         m_GlasContents = new Dictionary<Beverages, int>();
         m_GlasFeedback = new List<GlasFeedback>();
+
+        m_Parent = transform.parent.gameObject;
+        m_DefaultPosition = m_Parent.transform.position;
+        m_DefaultRotation = m_Parent.transform.rotation;
+    }
+
+    private void Start()
+    {
+        m_ObjectPool = GameObject.Find("_System").GetComponent<ObjectPool>();
     }
 
     public Dictionary<Beverages, int> GetGlasContents()
@@ -37,6 +50,24 @@ public class Glas : MonoBehaviour
         {
             AddBeverage(other);
         }
+
+        if (other.CompareTag("DisableCollider"))
+        {
+            ResetGlas();
+        }
+    }
+
+    public void ResetGlas()
+    {
+        for (int i = 0; i < m_GlasFeedback.Count; i++)
+        {
+            m_GlasFeedback[i].Deactivate();
+        }
+
+        m_GlasContents.Clear();
+        m_ShotProgress = 0.0f;
+        m_Parent.transform.position = m_DefaultPosition;
+        m_Parent.transform.rotation = m_DefaultRotation;
     }
 
     private void AddBeverage(Collider other)
@@ -51,11 +82,12 @@ public class Glas : MonoBehaviour
                 m_LastBeverage = waterBall.m_Beverage;
             }
 
-            m_ShotProgress += Time.deltaTime;
+            m_ShotProgress += 1.5f * Time.deltaTime;
             if (m_ShotProgress >= 1f)
             {
                 m_GlasContents[waterBall.m_Beverage]++;
                 m_ShotProgress = 0f;
+                Debug.Log("Shot added: " + waterBall.m_Beverage);
                 UpdateBeverageUI(waterBall.m_Beverage, m_GlasContents[waterBall.m_Beverage]);
                 waterBall.Deactivate();
             }
@@ -73,6 +105,7 @@ public class Glas : MonoBehaviour
     {
         GlasFeedback feedback = m_ObjectPool.GetGlasFeedback();
         feedback.Activate(beverage, m_MaxPoint, m_MinPoint);
+        feedback.transform.parent = transform;
         m_GlasFeedback.Add(feedback);
     }
 

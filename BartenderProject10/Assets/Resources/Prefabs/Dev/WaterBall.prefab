@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135703993846848910}
   - component: {fileID: 54375092788315682}
   - component: {fileID: 114390854766470134}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WaterBall
   m_TagString: WaterBall
   m_Icon: {fileID: 0}

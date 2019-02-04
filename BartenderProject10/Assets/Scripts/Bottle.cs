@@ -4,7 +4,6 @@ public class Bottle : MonoBehaviour
 {
     [SerializeField]
     private Beverages m_Beverage;
-    [SerializeField]
     private ObjectPool m_ObjectPool;
     [SerializeField]
     private Material m_WaterColor;
@@ -12,6 +11,9 @@ public class Bottle : MonoBehaviour
     private Transform m_BottleOpening;
     [SerializeField]
     private Transform m_WaterBallTarget;
+
+    private Quaternion m_DefaultRotation;
+    private Vector3 m_DefaultPosition;
 
     private float m_MinTippingPoint;
     private float m_MaxTippingPoint;
@@ -24,11 +26,29 @@ public class Bottle : MonoBehaviour
         m_MaxTippingPoint = 270f;
         m_PourSpeed = 0.015f;
         m_WaterBallTarget.transform.position = new Vector3(m_BottleOpening.position.x, m_BottleOpening.position.y + 0.3f, m_BottleOpening.position.z);
+        m_DefaultPosition = transform.position;
+        m_DefaultRotation = transform.rotation;
+    }
+
+    private void Start()
+    {
+        m_ObjectPool = GameObject.Find("_System").GetComponent<ObjectPool>();
     }
 
     private void Update()
     {
         CheckIfTipping();
+
+        if (!gameObject.activeInHierarchy)
+        {
+            RespawnBottle();
+        }
+    }
+
+    private void RespawnBottle()
+    {
+        transform.position = m_DefaultPosition;
+        transform.rotation = m_DefaultRotation;
     }
 
     private void CheckIfTipping()
@@ -49,6 +69,14 @@ public class Bottle : MonoBehaviour
     private void Pour()
     {
         WaterBall waterBall =  m_ObjectPool.GetWaterBall();
-        waterBall.Activate(m_BottleOpening.position, m_WaterBallTarget.transform.position, m_Beverage);
+        waterBall.Activate(m_BottleOpening.position, m_WaterBallTarget.transform.position, m_Beverage, m_WaterColor);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DisableCollider"))
+        {
+            RespawnBottle();
+        }
     }
 }

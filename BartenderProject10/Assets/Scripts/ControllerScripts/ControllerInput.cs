@@ -36,6 +36,16 @@ public class ControllerInput : MonoBehaviour
         GetInputs();
     }
 
+    public Vector3 GetControllerVelocity()
+    {
+        return m_Controller.velocity;
+    }
+
+    public Vector3 GetControllerAngularVelocity()
+    {
+        return m_Controller.angularVelocity;
+    }
+
     private void GetInputs()
     {
         if (m_Controller.GetHairTriggerDown())
