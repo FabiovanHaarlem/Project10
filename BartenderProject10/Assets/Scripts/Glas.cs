@@ -8,7 +8,6 @@ public class Glas : MonoBehaviour
     private ObjectPool m_ObjectPool;
 
     private List<AddOn> m_AddOns;
-    //private List<GlasBeveragePiece> m_GlasContents;
     private Dictionary<Beverages, int> m_GlasContents;
     private List<GlasFeedback> m_GlasFeedback;
     private float m_ShotProgress;
@@ -25,9 +24,10 @@ public class Glas : MonoBehaviour
 
     private void Awake()
     {
-        //m_GlasContents = new List<GlasBeveragePiece>();
         m_GlasContents = new Dictionary<Beverages, int>();
         m_GlasFeedback = new List<GlasFeedback>();
+        //m_GlasContents.Add(Beverages.Cola, 3);
+        //m_GlasContents.Add(Beverages.SugerRush, 2);
 
         m_Parent = transform.parent.gameObject;
         m_DefaultPosition = m_Parent.transform.position;
