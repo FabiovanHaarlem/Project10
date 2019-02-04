@@ -21,7 +21,8 @@ public class Person : MonoBehaviour
     {
         m_Beverages = new Dictionary<Beverages, int>();
         m_NewBeverage = true;
-        m_NewBeverageTimer = Random.Range(3f, 6f);
+        //m_NewBeverageTimer = Random.Range(3.0f, 6.0f);
+        m_NewBeverageTimer = 1.0f;
     }
 
     private void ChooseMixedBeverage()
@@ -44,32 +45,41 @@ public class Person : MonoBehaviour
 
     private void CheckBeverage(Glas glas)
     {
-        int playerRating = 0;
-
-        foreach (KeyValuePair<Beverages, int> beverage in m_Beverages)
+        if (m_MixedBeverage != null)
         {
-            if (glas.GetGlasContents().ContainsKey(beverage.Key))
+            int playerRating = 0;
+
+            foreach (KeyValuePair<Beverages, int> beverage in m_Beverages)
             {
-                if (glas.GetGlasContents()[beverage.Key] == beverage.Value)
+                if (glas.GetGlasContents().ContainsKey(beverage.Key))
                 {
-                    playerRating += 1;
+                    if (glas.GetGlasContents()[beverage.Key] == beverage.Value)
+                    {
+                        playerRating += 1;
+                    }
                 }
             }
-        }
 
-        if (playerRating == m_BeverageRating || playerRating == m_BeverageRating - 1 || playerRating == m_BeverageRating + 1)
-        {
-            BeverageIsRight();
-            glas.ResetGlas();
+            if (playerRating == m_BeverageRating || playerRating == m_BeverageRating - 1 || playerRating == m_BeverageRating + 1)
+            {
+                BeverageIsRight();
+                glas.ResetGlas();
+            }
+            else
+            {
+                BeverageIsWrong();
+                glas.ResetGlas();
+            }
+
+            m_Beverages.Clear();
+            m_MixedBeverage = null;
+            m_NewBeverage = true;
+            m_NewBeverageTimer = Random.Range(3f, 6f);
         }
         else
         {
             BeverageIsWrong();
-            glas.ResetGlas();
         }
-
-        m_NewBeverage = true;
-        m_NewBeverageTimer = Random.Range(3f, 6f);
     }
 
     private void Update()
