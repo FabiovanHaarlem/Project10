@@ -12,6 +12,8 @@ public class Person : MonoBehaviour
     [SerializeField]
     private FeedbackCloud m_FeedbackCloud;
 
+    private Animator m_Animator;
+
     private int m_BeverageRating;
 
     private float m_NewBeverageTimer;
@@ -20,6 +22,8 @@ public class Person : MonoBehaviour
     private void Awake()
     {
         m_Beverages = new Dictionary<Beverages, int>();
+        m_Animator = GetComponent<Animator>();
+        m_Animator.SetTrigger("Idle");
         m_NewBeverage = true;
         //m_NewBeverageTimer = Random.Range(3.0f, 6.0f);
         m_NewBeverageTimer = 1.0f;
@@ -35,6 +39,7 @@ public class Person : MonoBehaviour
             m_BeverageRating++;
         }
         Debug.Log(m_MixedBeverage.m_BeverageName);
+        m_Animator.SetTrigger("Order");
         ShowBeverage();
     }
 
@@ -101,12 +106,14 @@ public class Person : MonoBehaviour
     private void BeverageIsRight()
     {
         m_FeedbackCloud.RightDrink();
+        m_Animator.SetTrigger("TakeDrink");
         Debug.Log("Right Drink");
     }
 
     private void BeverageIsWrong()
     {
         m_FeedbackCloud.WrongDrink();
+        m_Animator.SetTrigger("TakeDrink");
         Debug.Log("Wrong Drink");
     }
 
