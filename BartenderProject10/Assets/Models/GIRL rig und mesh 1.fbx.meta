@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fab9c83ba3225cd4cbde50afd1f3d16d
+guid: 15c92cc614e82924f9abbc2e30301ea5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -49,10 +49,11 @@ ModelImporter:
     400040: RightUpLeg
     400042: Spine
     400044: Spine1
-    2100000: lambert1
+    2100000: texture
+    2300000: char_female:pCylinder29
+    3300000: char_female:pCylinder29
     4300000: char_female:pCylinder29
     9500000: //RootNode
-    13700000: char_female:pCylinder29
   externalObjects: {}
   materials:
     importMaterials: 1
