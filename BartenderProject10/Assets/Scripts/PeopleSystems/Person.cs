@@ -51,11 +51,14 @@ public class Person : MonoBehaviour
 
             foreach (KeyValuePair<Beverages, int> beverage in m_Beverages)
             {
-                if (glas.GetGlasContents().ContainsKey(beverage.Key))
+                if (glas.GetGlasContents().Count != 0)
                 {
-                    if (glas.GetGlasContents()[beverage.Key] == beverage.Value)
+                    if (glas.GetGlasContents().ContainsKey(beverage.Key))
                     {
-                        playerRating += 1;
+                        if (glas.GetGlasContents()[beverage.Key] == beverage.Value)
+                        {
+                            playerRating += 1;
+                        }
                     }
                 }
             }
