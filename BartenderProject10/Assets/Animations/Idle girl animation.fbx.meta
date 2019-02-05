@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: fc9bbbf09a0a4064d89e9abe109e973d
+guid: 80743ae92bc9b76409ba994221b52a9b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
+    100000: char_female:pCylinder29
     100002: Head
     100004: Hips
-    100006: LeftArm
-    100008: LeftFoot
-    100010: LeftForeArm
-    100012: LeftHand
-    100014: LeftLeg
-    100016: LeftShoulder
-    100018: LeftToeBase
-    100020: LeftUpLeg
-    100022: Neck
-    100024: pCylinder32
+    100006: //RootNode
+    100008: LeftArm
+    100010: LeftFoot
+    100012: LeftForeArm
+    100014: LeftHand
+    100016: LeftLeg
+    100018: LeftShoulder
+    100020: LeftToeBase
+    100022: LeftUpLeg
+    100024: Neck
     100026: RightArm
     100028: RightFoot
     100030: RightForeArm
@@ -26,19 +26,19 @@ ModelImporter:
     100040: RightUpLeg
     100042: Spine
     100044: Spine1
-    400000: //RootNode
+    400000: char_female:pCylinder29
     400002: Head
     400004: Hips
-    400006: LeftArm
-    400008: LeftFoot
-    400010: LeftForeArm
-    400012: LeftHand
-    400014: LeftLeg
-    400016: LeftShoulder
-    400018: LeftToeBase
-    400020: LeftUpLeg
-    400022: Neck
-    400024: pCylinder32
+    400006: //RootNode
+    400008: LeftArm
+    400010: LeftFoot
+    400012: LeftForeArm
+    400014: LeftHand
+    400016: LeftLeg
+    400018: LeftShoulder
+    400020: LeftToeBase
+    400022: LeftUpLeg
+    400024: Neck
     400026: RightArm
     400028: RightFoot
     400030: RightForeArm
@@ -50,9 +50,10 @@ ModelImporter:
     400042: Spine
     400044: Spine1
     2100000: lambert1
-    4300000: pCylinder32
+    4300000: char_female:pCylinder29
+    7400000: idle girl
     9500000: //RootNode
-    13700000: pCylinder32
+    13700000: char_female:pCylinder29
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -80,7 +81,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle girl
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
