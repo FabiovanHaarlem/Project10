@@ -6,10 +6,16 @@
     IncompleteVodka,
     Acardi,
     SugerRush,
-    TheEnd,
+    ToKilYa,
     Boujie,
-    SixUp,
+    EightUp,
     Cola,
+    Fanta,
+    Cassis,
+    IceTea,
+    Tonic,
     OrangeJuice,
-    GrapefruitJuice
+    GrapefruitJuice,
+    Beer
+
 }

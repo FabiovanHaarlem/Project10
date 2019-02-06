@@ -31,4 +31,18 @@ public class SceneSwitchEditor
         EditorSceneManager.OpenScene("Assets/Scenes/Artists/MainArtDropScene.unity");
         EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
     }
+
+    [MenuItem("Scenes/Level1")]
+    public static void Level1Scene()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/Level - Lisa.unity");
+        EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+    }
+
+    [MenuItem("Scenes/Level2")]
+    public static void Level2Scene()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/Level 2 - Lisa.unity");
+        EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+    }
 }

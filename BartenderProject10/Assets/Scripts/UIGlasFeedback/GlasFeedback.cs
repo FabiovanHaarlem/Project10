@@ -41,6 +41,18 @@ public class GlasFeedback : MonoBehaviour
             case Beverages.Cola:
                 beverageName = "Cola";
                 break;
+            case Beverages.Fanta:
+                beverageName = "Fanta";
+                break;
+            case Beverages.Cassis:
+                beverageName = "Cassis";
+                break;
+            case Beverages.IceTea:
+                beverageName = "Ice Tea";
+                break;
+            case Beverages.Tonic:
+                beverageName = "Tonic";
+                break;
             case Beverages.GrapefruitJuice:
                 beverageName = "Grapefruit Juice";
                 break;
@@ -56,14 +68,17 @@ public class GlasFeedback : MonoBehaviour
             case Beverages.Pisaronno:
                 beverageName = "Pisaronno";
                 break;
-            case Beverages.SixUp:
-                beverageName = "Six Up";
+            case Beverages.EightUp:
+                beverageName = "8 Up";
                 break;
             case Beverages.SugerRush:
                 beverageName = "Suger Rush";
                 break;
-            case Beverages.TheEnd:
-                beverageName = "The End";
+            case Beverages.ToKilYa:
+                beverageName = "To Kil Ya";
+                break;
+            case Beverages.Beer:
+                beverageName = "Beer";
                 break;
         }
         m_BeverageName = beverageName;

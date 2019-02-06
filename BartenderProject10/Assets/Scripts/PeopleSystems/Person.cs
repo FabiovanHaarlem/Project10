@@ -25,8 +25,8 @@ public class Person : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Animator.SetTrigger("Idle");
         m_NewBeverage = true;
-        //m_NewBeverageTimer = Random.Range(3.0f, 6.0f);
-        m_NewBeverageTimer = 1.0f;
+        m_NewBeverageTimer = Random.Range(3.0f, 6.0f);
+        //m_NewBeverageTimer = 1.0f;
     }
 
     private void ChooseMixedBeverage()

@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 23278100111676030}
   - component: {fileID: 114570742557912094}
   - component: {fileID: 65085328679688468}
-  - component: {fileID: 54232517024086560}
+  - component: {fileID: 54570571194740918}
   m_Layer: 10
   m_Name: Bottle_Soda_Cola
   m_TagString: Untagged
@@ -80,9 +80,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383616335337728}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7201645, y: 2.222, z: -0.70067453}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1713793, y: 0.00999999, z: -0.5463526}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4714113213603104}
   m_Father: {fileID: 0}
@@ -144,7 +144,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383616335337728}
   m_Mesh: {fileID: 4300000, guid: 7188f0da32c5cfc4a99b87022f98efe1, type: 3}
---- !u!54 &54232517024086560
+--- !u!54 &54570571194740918
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

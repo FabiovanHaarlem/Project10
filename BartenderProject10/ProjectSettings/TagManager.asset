@@ -8,6 +8,7 @@ TagManager:
   - WaterBall
   - Glas
   - HandTrigger
+  - Moveable
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - Bottle
   - GrabableAndCollision
   - Collision
-  - 
-  - 
+  - Moveable
+  - Button
   - 
   - 
   - 

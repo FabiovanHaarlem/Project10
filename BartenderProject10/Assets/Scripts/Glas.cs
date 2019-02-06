@@ -26,8 +26,6 @@ public class Glas : MonoBehaviour
     {
         m_GlasContents = new Dictionary<Beverages, int>();
         m_GlasFeedback = new List<GlasFeedback>();
-        m_GlasContents.Add(Beverages.Cola, 3);
-        m_GlasContents.Add(Beverages.SugerRush, 2);
 
         m_Parent = transform.parent.gameObject;
         m_DefaultPosition = m_Parent.transform.position;

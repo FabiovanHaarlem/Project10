@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9508aa2a46ea2114fa654543d1a18e18, type: 3}
+  m_Name: CassisWithSugerRush
+  m_EditorClassIdentifier: 
+  m_BeverageName: Cassis with Sugar Rush
+  m_BeverageIcon: {fileID: 21300000, guid: e5d77c753e9964e4ba77534ba61d0cf5, type: 3}
+  m_Beverages:
+  - m_Beverage: 11
+    m_AmountInShots: 3
+  - m_Beverage: 5
+    m_AmountInShots: 2
+  m_AddOn: []
+  m_Information: '3 Shots Cassis
+
+    2 Shots Suger Rush'
