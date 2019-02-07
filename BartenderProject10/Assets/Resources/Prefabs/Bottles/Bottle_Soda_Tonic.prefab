@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821003662013432}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.0224483, y: 0.3, z: -0.47642678}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4023725867165138}
@@ -183,6 +183,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Beverage: 13
-  m_WaterColor: {fileID: 2100000, guid: ebb93765c6e55fc4e8d58e76407bad08, type: 2}
+  m_WaterColor: {fileID: 2100000, guid: cbe79d8063706c84d8820d4342e6d086, type: 2}
   m_BottleOpening: {fileID: 4023725867165138}
   m_WaterBallTarget: {fileID: 4754107804632054}

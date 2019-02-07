@@ -22,6 +22,19 @@ public class Glas : MonoBehaviour
     private Quaternion m_DefaultRotation;
     private GameObject m_Parent;
 
+    [SerializeField]
+    private GameObject m_WholeLemonSlice;
+    [SerializeField]
+    private GameObject m_HalfLemonSlice;
+    [SerializeField]
+    private GameObject m_WholeOrangeSlice;
+    [SerializeField]
+    private GameObject m_HalfOrangeSlice;
+    [SerializeField]
+    private GameObject m_Ice;
+    [SerializeField]
+    private GameObject m_Cherry;
+
     private void Awake()
     {
         m_GlasContents = new Dictionary<Beverages, int>();
@@ -53,6 +66,40 @@ public class Glas : MonoBehaviour
         {
             ResetGlas();
         }
+
+        if (other.gameObject.CompareTag("Addon"))
+        {
+            
+            AddOn addon = other.gameObject.GetComponent<AddOn>();
+            switch(addon.m_Extra)
+            {
+                case Extras.Cherry:
+                    if (m_Cherry != null)
+                    m_Cherry.SetActive(true);
+                    break;
+                case Extras.WholeLemonSlice:
+                    if (m_WholeLemonSlice != null)
+                        m_WholeLemonSlice.SetActive(true);
+                    break;
+                case Extras.WholeOrangeSlice:
+                    if (m_WholeOrangeSlice != null)
+                        m_WholeOrangeSlice.SetActive(true);
+                    break;
+                case Extras.HalfLemonSlice:
+                    if (m_HalfLemonSlice != null)
+                        m_HalfLemonSlice.SetActive(true);
+                    break;
+                case Extras.HalfOrangeSlice:
+                    if (m_HalfOrangeSlice != null)
+                        m_HalfOrangeSlice.SetActive(true);
+                    break;
+                case Extras.Ice:
+                    if (m_Ice != null)
+                        m_Ice.SetActive(true);
+                    break;
+            }
+            addon.gameObject.SetActive(false);
+        }
     }
 
     public void ResetGlas()
@@ -66,6 +113,18 @@ public class Glas : MonoBehaviour
         m_ShotProgress = 0.0f;
         m_Parent.transform.position = m_DefaultPosition;
         m_Parent.transform.rotation = m_DefaultRotation;
+        if (m_Cherry != null)
+            m_Cherry.SetActive(false);
+        if (m_WholeLemonSlice != null)
+            m_WholeLemonSlice.SetActive(false);
+        if (m_WholeOrangeSlice != null)
+            m_WholeOrangeSlice.SetActive(false);
+        if (m_HalfLemonSlice != null)
+            m_HalfLemonSlice.SetActive(false);
+        if (m_HalfOrangeSlice != null)
+            m_HalfOrangeSlice.SetActive(false);
+        if (m_Ice != null)
+            m_Ice.SetActive(false);
     }
 
     private void AddBeverage(Collider other)

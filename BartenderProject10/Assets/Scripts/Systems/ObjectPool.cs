@@ -5,11 +5,15 @@ public class ObjectPool : MonoBehaviour
 {
     private List<WaterBall> m_WaterBalls;
     private List<GlasFeedback> m_GlasFeedbacks;
+    private List<AddOn> m_Addons;
+    [SerializeField]
+    private List<GameObject> m_AddonsPrefabs;
 
     private void Awake()
     {
         m_WaterBalls = new List<WaterBall>();
         m_GlasFeedbacks = new List<GlasFeedback>();
+        m_Addons = new List<AddOn>();
 
         for (int i = 0; i < 400; i++)
         {
@@ -24,6 +28,39 @@ public class ObjectPool : MonoBehaviour
             m_GlasFeedbacks.Add(glasFeedback.GetComponent<GlasFeedback>());
             glasFeedback.SetActive(false);
         }
+
+        CreateAllAddons();
+    }
+
+    private void CreateAllAddons()
+    {
+        for (int i = 0; i < m_AddonsPrefabs.Count; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                GameObject addon = Instantiate(m_AddonsPrefabs[i]);
+                m_Addons.Add(addon.GetComponent<AddOn>());
+                addon.SetActive(false);
+            }
+        }
+    }
+
+    public AddOn GetAddon(Extras wantedAddon)
+    {
+        AddOn addon = m_Addons[0];
+        for (int i = 0; i < m_Addons.Count; i++)
+        {
+            if (wantedAddon == m_Addons[i].m_Extra)
+            {
+                addon = m_Addons[i];
+                if (!m_Addons[i].gameObject.activeInHierarchy)
+                {
+                    addon = m_Addons[i];
+                    break;
+                }
+            }
+        }
+        return addon;
     }
 
     public WaterBall GetSpecificWaterBall(Collider wantedWaterBall)

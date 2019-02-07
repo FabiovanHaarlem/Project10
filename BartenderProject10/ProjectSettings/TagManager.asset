@@ -9,6 +9,7 @@ TagManager:
   - Glas
   - HandTrigger
   - Moveable
+  - Addon
   layers:
   - Default
   - TransparentFX
@@ -31,8 +32,8 @@ TagManager:
   - Collision
   - Moveable
   - Button
-  - 
-  - 
+  - Addon
+  - Deco
   - 
   - 
   - 

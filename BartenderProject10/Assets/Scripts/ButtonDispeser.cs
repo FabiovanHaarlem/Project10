@@ -5,6 +5,8 @@ public class ButtonDispeser : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent m_ButtonPressedEvent;
+    [SerializeField]
+    private bool m_HoldButton;
 
     private void ButtonPressed()
     {
@@ -13,6 +15,13 @@ public class ButtonDispeser : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (m_HoldButton)
         ButtonPressed();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!m_HoldButton)
+            ButtonPressed();
     }
 }

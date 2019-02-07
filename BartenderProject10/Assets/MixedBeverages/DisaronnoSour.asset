@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9508aa2a46ea2114fa654543d1a18e18, type: 3}
   m_Name: DisaronnoSour
   m_EditorClassIdentifier: 
-  m_BeverageName: Pisaronno Sour
+  m_BeverageName: Bebida Sour
   m_BeverageIcon: {fileID: 21300000, guid: 871d39c8d55ec0d46b28fe53a37af293, type: 3}
   m_Beverages:
   - m_Beverage: 5
@@ -29,4 +29,4 @@ MonoBehaviour:
     m_Amount: 1
   m_Information: '1 Shot Suger Rush
 
-    3 Shots Pisaronno'
+    3 Shots Bebida'

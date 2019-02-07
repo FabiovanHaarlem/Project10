@@ -1,8 +1,14 @@
-﻿using System;
+﻿using UnityEngine;
 
-[Serializable]
-public class AddOn
+public class AddOn : MonoBehaviour
 {
     public Extras m_Extra;
-    public int m_Amount;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DisableCollider"))
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }
