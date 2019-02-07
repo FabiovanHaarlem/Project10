@@ -21,7 +21,8 @@ public class WaterBall : MonoBehaviour
         transform.position = pos;
         m_Beverage = beverage;
         gameObject.SetActive(true);
-        Vector3 dir = (target - transform.position).normalized;
+        //Vector3 dir = (target - transform.position).normalized;
+        Vector3 dir = target;
         m_Rigidbody.AddForce(dir * 1.2f, ForceMode.Impulse);
         m_DisableTimer = 0.5f;
         m_Disable = false;

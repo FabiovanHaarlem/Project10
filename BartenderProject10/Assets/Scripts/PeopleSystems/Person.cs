@@ -38,8 +38,9 @@ public class Person : MonoBehaviour
             m_Beverages.Add(m_MixedBeverage.m_Beverages[i].m_Beverage, m_MixedBeverage.m_Beverages[i].m_AmountInShots);
             m_BeverageRating++;
         }
-        Debug.Log(m_MixedBeverage.m_BeverageName);
+
         m_Animator.SetTrigger("Order");
+        m_Animator.SetTrigger("Idle");
         ShowBeverage();
     }
 
@@ -107,14 +108,14 @@ public class Person : MonoBehaviour
     {
         m_FeedbackCloud.RightDrink();
         m_Animator.SetTrigger("TakeDrink");
-        Debug.Log("Right Drink");
+        m_Animator.SetTrigger("Idle");
     }
 
     private void BeverageIsWrong()
     {
         m_FeedbackCloud.WrongDrink();
         m_Animator.SetTrigger("TakeDrink");
-        Debug.Log("Wrong Drink");
+        m_Animator.SetTrigger("Idle");
     }
 
     private void OnTriggerEnter(Collider other)

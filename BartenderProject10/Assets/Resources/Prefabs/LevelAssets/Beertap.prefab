@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 54263012881270824}
   m_Layer: 20
   m_Name: Beertap_Handle
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d003039f0b40c1c4f92507fa5348913c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_WaterColor: {fileID: 2100000, guid: ebb93765c6e55fc4e8d58e76407bad08, type: 2}
+  m_WaterColor: {fileID: 2100000, guid: 4334bd619d987074f8dce254e711325c, type: 2}
   m_BottleOpening: {fileID: 4623693758133406}
   m_WaterBallTarget: {fileID: 4376426038397862}
 --- !u!114 &114858316931448014

@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1594704188110876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.258, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4972063348075180}
@@ -80,14 +80,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317720766885258}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8945976, y: 0.838, z: -0.39011472}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0.8606452, z: -0, w: 0.5092051}
+  m_LocalPosition: {x: 1.247, y: 0.966, z: 2.12071}
+  m_LocalScale: {x: 0.70000076, y: 0.7, z: 0.7000009}
   m_Children:
   - {fileID: 4972063348075180}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -118.77801, z: 0}
 --- !u!4 &4972063348075180
 Transform:
   m_ObjectHideFlags: 1
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7ace6cc907d5b439ecbdfc779d1ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Beverage: 0
+  m_Beverage: 1
   m_WaterColor: {fileID: 2100000, guid: fb4a42267b8989545b86ddf4a4fd559b, type: 2}
   m_BottleOpening: {fileID: 4972063348075180}
   m_WaterBallTarget: {fileID: 4316243046939432}
