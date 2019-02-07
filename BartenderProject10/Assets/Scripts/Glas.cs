@@ -144,7 +144,6 @@ public class Glas : MonoBehaviour
             {
                 m_GlasContents[waterBall.m_Beverage]++;
                 m_ShotProgress = 0f;
-                Debug.Log("Shot added: " + waterBall.m_Beverage);
                 UpdateBeverageUI(waterBall.m_Beverage, m_GlasContents[waterBall.m_Beverage]);
                 waterBall.Deactivate();
             }

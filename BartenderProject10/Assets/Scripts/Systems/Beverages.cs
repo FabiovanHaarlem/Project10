@@ -1,7 +1,7 @@
 ﻿public enum Beverages
 {
     JohnnyDaniels = 0,
-    Pisaronno,
+    Bebida,
     Coinstreau,
     IncompleteVodka,
     Acardi,

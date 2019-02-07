@@ -24,6 +24,6 @@ public class BeerTab : MonoBehaviour
     public void Pour()
     {
         WaterBall waterBall = m_ObjectPool.GetWaterBall();
-        waterBall.Activate(m_BottleOpening.position, m_WaterBallTarget.transform.position, m_Beverage, m_WaterColor);
+        waterBall.Activate(m_BottleOpening.position, -transform.up, m_Beverage, m_WaterColor);
     }
 }

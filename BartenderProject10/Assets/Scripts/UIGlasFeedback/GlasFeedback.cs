@@ -65,8 +65,8 @@ public class GlasFeedback : MonoBehaviour
             case Beverages.OrangeJuice:
                 beverageName = "Orange Juice";
                 break;
-            case Beverages.Pisaronno:
-                beverageName = "Pisaronno";
+            case Beverages.Bebida:
+                beverageName = "Bebida";
                 break;
             case Beverages.EightUp:
                 beverageName = "8 Up";

@@ -61,6 +61,7 @@ public class PickUpItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Button") && !other.CompareTag("Moveable"))
         if (m_Item == null)
         m_Item = other.gameObject;
     }
