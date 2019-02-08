@@ -35,6 +35,11 @@ public class Glas : MonoBehaviour
     [SerializeField]
     private GameObject m_Cherry;
 
+    //[SerializeField]
+    //private Renderer m_Renderer;
+
+    //private float m_FillAmount;
+
     private void Awake()
     {
         m_GlasContents = new Dictionary<Beverages, int>();
@@ -43,11 +48,13 @@ public class Glas : MonoBehaviour
         m_Parent = transform.parent.gameObject;
         m_DefaultPosition = m_Parent.transform.position;
         m_DefaultRotation = m_Parent.transform.rotation;
+        //m_FillAmount = 0.6f;
     }
 
     private void Start()
     {
         m_ObjectPool = GameObject.Find("_System").GetComponent<ObjectPool>();
+        //m_Renderer.material.SetFloat("_FillAmount", m_FillAmount);
     }
 
     public Dictionary<Beverages, int> GetGlasContents()
@@ -142,6 +149,9 @@ public class Glas : MonoBehaviour
             m_ShotProgress += 1.5f * Time.deltaTime;
             if (m_ShotProgress >= 1f)
             {
+                //m_Renderer.material.SetColor("_TopColor", waterBall.GetMaterial().color);
+                //m_FillAmount -= 0.025f;
+                //m_Renderer.material.SetFloat("_FillAmount", m_FillAmount);
                 m_GlasContents[waterBall.m_Beverage]++;
                 m_ShotProgress = 0f;
                 UpdateBeverageUI(waterBall.m_Beverage, m_GlasContents[waterBall.m_Beverage]);
@@ -155,12 +165,13 @@ public class Glas : MonoBehaviour
             CreateNewBeverageUI(waterBall.m_Beverage);
             waterBall.Deactivate();
         }
+        //m_FillAmount = Mathf.Clamp(m_FillAmount, 0.4f, 0.6f);
     }
 
     private void CreateNewBeverageUI(Beverages beverage)
     {
         GlasFeedback feedback = m_ObjectPool.GetGlasFeedback();
-        feedback.Activate(beverage, m_MaxPoint, m_MinPoint);
+        feedback.Activate(beverage, m_MaxPoint, m_MinPoint, m_GlasFeedback.Count);
         feedback.transform.parent = transform;
         m_GlasFeedback.Add(feedback);
     }

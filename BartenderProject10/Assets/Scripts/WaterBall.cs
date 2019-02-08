@@ -63,6 +63,11 @@ public class WaterBall : MonoBehaviour
         m_Renderer.material = beverageColor;
     }
 
+    public Material GetMaterial()
+    {
+        return m_Renderer.material;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Glas"))

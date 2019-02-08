@@ -15,14 +15,16 @@ public class GlasFeedback : MonoBehaviour
     private GameObject m_PlayerHead;
     [SerializeField]
     private GameObject m_RotateParent;
+    private float m_CloudNumber;
 
     private void Start()
     {
         m_PlayerHead = GameObject.Find("PlayerHead");
     }
 
-    public void Activate(Beverages beverage, Transform maxPoint, Transform minPoint)
+    public void Activate(Beverages beverage, Transform maxPoint, Transform minPoint, int amountOfFeedbackClouds)
     {
+        m_CloudNumber = amountOfFeedbackClouds;
         m_Beverage = beverage;
         m_MaxPoint = new Vector3(maxPoint.position.x, maxPoint.position.y, maxPoint.position.z);
         m_MinPoint = new Vector3(minPoint.position.x, minPoint.position.y, minPoint.position.z);
@@ -84,10 +86,9 @@ public class GlasFeedback : MonoBehaviour
         m_BeverageName = beverageName;
         gameObject.SetActive(true);
         transform.position = m_MinPoint;
-        m_CurrentTargetPosition = Vector3.MoveTowards(m_MinPoint, m_MaxPoint, 0f);
-        m_BeverageInformation.text = m_BeverageName + Environment.NewLine + "0";
-
-        
+        m_CurrentTargetPosition = Vector3.MoveTowards(m_MinPoint, m_MaxPoint, (m_CloudNumber * 2.0f) / 40.0f);
+        transform.position = m_CurrentTargetPosition;
+        m_BeverageInformation.text = m_BeverageName + Environment.NewLine + "0";    
     }
 
     public void Deactivate()
@@ -99,10 +100,10 @@ public class GlasFeedback : MonoBehaviour
     public void UpdateUI(float amount)
     {
         m_BeverageInformation.text = m_BeverageName + Environment.NewLine + Mathf.Round(amount) + "Shots";
-        amount = Mathf.Clamp(amount, 0, 10);
-        amount = amount / 25f;
-        m_CurrentTargetPosition = Vector3.MoveTowards(m_MinPoint, m_MaxPoint, amount);
-        transform.position = Vector3.MoveTowards(transform.position, m_CurrentTargetPosition, 1f);
+        //amount = Mathf.Clamp(amount, 0, 10);
+        //amount = amount / 25f;
+        //m_CurrentTargetPosition = Vector3.MoveTowards(m_MinPoint, m_MaxPoint, amount);
+        //transform.position = Vector3.MoveTowards(transform.position, m_CurrentTargetPosition, 1f);
     }
 
     private void Update()
