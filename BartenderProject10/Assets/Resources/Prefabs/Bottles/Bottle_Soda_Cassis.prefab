@@ -11,6 +11,24 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1926613503478240}
   m_IsPrefabAsset: 1
+--- !u!1 &1354856836249176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4969775358100494}
+  - component: {fileID: 33656933181713508}
+  - component: {fileID: 23161134462377548}
+  - component: {fileID: 114111368713354002}
+  m_Layer: 2
+  m_Name: Bottle_Soda_8Up (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1790186171789750
 GameObject:
   m_ObjectHideFlags: 1
@@ -80,14 +98,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926613503478240}
-  m_LocalRotation: {x: -0, y: -0.59786767, z: -0, w: 0.80159485}
-  m_LocalPosition: {x: 1.3746493, y: 0.952, z: -3.153518}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.837, y: 1.9200366, z: 0.89410037}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4997280234560504}
+  - {fileID: 4969775358100494}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -73.435005, z: 0}
+--- !u!4 &4969775358100494
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354856836249176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0004284722, y: -0.0129093435, z: -0.001286183}
+  m_LocalScale: {x: 0.8571427, y: 0.8571427, z: 0.8571427}
+  m_Children: []
+  m_Father: {fileID: 4846507540137608}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4997280234560504
 Transform:
   m_ObjectHideFlags: 1
@@ -102,6 +134,41 @@ Transform:
   m_Father: {fileID: 4846507540137608}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23161134462377548
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354856836249176}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 6cd6ae1f50e0dc148a6b823a4f03676d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23541178837755788
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -144,6 +211,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926613503478240}
   m_Mesh: {fileID: 4300000, guid: ba120705e342653408f7278704b3806f, type: 3}
+--- !u!33 &33656933181713508
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354856836249176}
+  m_Mesh: {fileID: 4300000, guid: 48e017293a5e16d4db48c21355387643, type: 3}
 --- !u!54 &54928535441995536
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -171,6 +245,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23127504, y: 0.5530063, z: 0.23127493}
   m_Center: {x: -0.00000014901161, y: -0.06652959, z: -0.000000021287374}
+--- !u!114 &114111368713354002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354856836249176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b05a57ab970a454c92e348be0b7a659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 0.2
+  WobbleSpeed: 2
+  Recovery: 1
 --- !u!114 &114839891092228242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,3 +274,4 @@ MonoBehaviour:
   m_WaterColor: {fileID: 2100000, guid: 0c1de354a16f1c84fb497d10c8ce7a01, type: 2}
   m_BottleOpening: {fileID: 4997280234560504}
   m_WaterBallTarget: {fileID: 4206503547235626}
+  m_Renderer: {fileID: 23161134462377548}

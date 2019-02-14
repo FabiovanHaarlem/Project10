@@ -11,6 +11,8 @@ public class Bottle : MonoBehaviour
     private Transform m_BottleOpening;
     [SerializeField]
     private Transform m_WaterBallTarget;
+    [SerializeField]
+    private Renderer m_Renderer;
 
     private Quaternion m_DefaultRotation;
     private Vector3 m_DefaultPosition;
@@ -33,6 +35,11 @@ public class Bottle : MonoBehaviour
     private void Start()
     {
         m_ObjectPool = GameObject.Find("_System").GetComponent<ObjectPool>();
+        if (m_Renderer != null)
+        {
+            m_Renderer.material.SetFloat("_FillAmount", 0.45f);
+            m_Renderer.material.SetColor("_TopColor", m_WaterColor.color);
+        }
     }
 
     private void Update()

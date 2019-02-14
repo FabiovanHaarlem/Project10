@@ -170,6 +170,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1207650536144264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4067785262538950}
+  - component: {fileID: 33538851414849704}
+  - component: {fileID: 23353098312261448}
+  - component: {fileID: 114146476435862360}
+  m_Layer: 2
+  m_Name: Liquid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1217814019936908
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +973,19 @@ Transform:
   m_Father: {fileID: 4934545650286798}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 167.858, z: -35.338}
+--- !u!4 &4067785262538950
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207650536144264}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.002, y: -0.0602, z: 0.001}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_Children: []
+  m_Father: {fileID: 4934545650286798}
+  m_RootOrder: 54
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4103560377436874
 Transform:
   m_ObjectHideFlags: 1
@@ -1671,6 +1702,7 @@ Transform:
   - {fileID: 4915166247218872}
   - {fileID: 4238122039823348}
   - {fileID: 4328736908360540}
+  - {fileID: 4067785262538950}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1742,6 +1774,41 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 92a419ac5368c1947af58b11abab8808, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23353098312261448
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207650536144264}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: de4e5f9eeab29ab40b0011c868fa6fd0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1936,6 +2003,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992055582839274}
   m_Mesh: {fileID: 4300000, guid: 7298e7b7ee3ddc84a823e78ab0c080f7, type: 3}
+--- !u!33 &33538851414849704
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207650536144264}
+  m_Mesh: {fileID: 4300000, guid: d2d1f84ece480b048b0a24f772bb88b1, type: 3}
 --- !u!54 &54732944708792096
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -2539,6 +2613,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0060929963, y: 0.068677425, z: 0.044255078}
   m_Center: {x: 0.11033934, y: 0.12943041, z: 0.019477129}
+--- !u!114 &114146476435862360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207650536144264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b05a57ab970a454c92e348be0b7a659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 0.2
+  WobbleSpeed: 2
+  Recovery: 1
 --- !u!114 &114946785233457412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2559,6 +2647,7 @@ MonoBehaviour:
   m_HalfOrangeSlice: {fileID: 0}
   m_Ice: {fileID: 1039107396866866}
   m_Cherry: {fileID: 1992055582839274}
+  m_Renderer: {fileID: 23353098312261448}
 --- !u!135 &135584770041624594
 SphereCollider:
   m_ObjectHideFlags: 1
